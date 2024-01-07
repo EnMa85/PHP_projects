@@ -261,9 +261,9 @@ function send_email($subject, $message, $sender_mail, $sender_name){
     // creates an instance of PHPMailer
     $mail = new PHPMailer();
 
-    $send_to = "admin mail";
-    $pw = "password admin mail"; 
-    $host = "host admin mail";
+    $send_to = ""; //admin mail
+    $pw = ""; // password admin mail 
+    $host = ""; //host admin mail
     
     //$mail->SMTPDebug = 2;
     try {

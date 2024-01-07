@@ -61,7 +61,7 @@ INSERT INTO categorie (nome)
 VALUES 
     (	'Informatica'     ), 
     (	'Economia'        ), 
-    (	'Grafica'	      ), 
+    (   'Grafica'         ), 
     (	'Amministrazione' ), 
     (	'Lingue'          );
 
@@ -74,7 +74,7 @@ VALUES
     ("Segretaria_d'_azienda"        ,  4),
     ('Segretaria_di_studio_medico'  ,  4),
     ('Controllo_di_gestione'        ,  2),
-    ('Grafica'                      ,  3),
+    ('Web_design'                   ,  3),
     ('Inglese'                      ,  5),
     ('Spagnolo'                     ,  5),
     ('Francese'                     ,  5);

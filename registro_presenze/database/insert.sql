@@ -48,14 +48,14 @@ INSERT INTO utenti (id_docente, email, password)
 VALUES 
     (1  ,  'tizio@mail.it'     ,    '$2y$10$xcCQhv7UxuNdLjJyg8SffuwfmCDISjJqBE.WtPwRbevyB7Mhdu9JO'),
     (2  ,  'caio@mail.it'      ,    '$2y$10$K3vHNjBcmpC5Xu/BbDCPou1Qsc3Lyd09VwLo0ing2yZDkXjuEidhq'),
-    (3  ,  'sempronio@mail.it' , 	'$2y$10$JSXw4xSZdi9UUcrKwMG/TuFrW0P5AReq1Jpekl0H8WgcgjvNy7q3W'),
+    (3  ,  'sempronio@mail.it' ,    '$2y$10$JSXw4xSZdi9UUcrKwMG/TuFrW0P5AReq1Jpekl0H8WgcgjvNy7q3W'),
     (4  ,  'pinco@mail.it'     ,    '$2y$10$0qnOOo0Lc4qOxjM8eLNzNOR4V9p2p.LYdLfnhgUaDObFJJMUkGaBC'),
     (5  ,  'pino@mail.it'      ,    '$2y$10$fWJz8AYtcd2QJ.3pxuUlFuPPfXGLhYCZF86VqH9zwj5OR0zp85Hmi'),
     (6  ,  'mickey@mail.it'    ,    '$2y$10$GN10MOCH4aaW5o/PQMHCuuw2U5AvQwrs4neoK7M/uCtced2fE2qvG'),
     (7  ,  'donald@mail.it'    ,    '$2y$10$3eQX1LCItYUEqxahJ4MXXeIk7xlvte4xnK9BrgAdSmFz03.ico7We'),
     (8  ,  'daisy@mail.it'     ,    '$2y$10$fUNzCjSZZJOkUovtdwDrjeI.x3DISnr3Z0tscMAApCHanCAuY57lS'),
     (9  ,  'pippo@mail.it'     ,    '$2y$10$5bcJ5BTPRt/T9e6Sa5OgWOW4WuMzzlC6/mp2d/nm1.uRmdNKJtfGi'),
-    (10 ,  'silvestro@mail.it' , 	'$2y$10$CNiLLzlvNGIMIHF.2Lset.UxX.yvPt3bLi9nFBZVuf8CH1JPEyOhy');
+    (10 ,  'silvestro@mail.it' ,    '$2y$10$CNiLLzlvNGIMIHF.2Lset.UxX.yvPt3bLi9nFBZVuf8CH1JPEyOhy');
     
 INSERT INTO categorie (nome) 
 VALUES 

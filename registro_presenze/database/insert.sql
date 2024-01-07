@@ -59,11 +59,11 @@ VALUES
     
 INSERT INTO categorie (nome) 
 VALUES 
-    (	'Informatica'     ), 
-    (	'Economia'        ), 
-    (   'Grafica'         ), 
-    (	'Amministrazione' ), 
-    (	'Lingue'          );
+    (    'Informatica'     ), 
+    (    'Economia'        ), 
+    (    'Grafica'         ), 
+    (    'Amministrazione' ), 
+    (    'Lingue'          );
 
 
 INSERT INTO corsi (titolo, id_categoria) 

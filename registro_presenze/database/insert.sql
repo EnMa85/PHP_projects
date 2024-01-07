@@ -8,9 +8,9 @@ VALUES
     ('Pinco'     ,  'Pallino'),
     ('Pino'.     ,  'Calzino'),
     ('Mickey'    ,    'Mouse'),
-    ('Donald'	 ,     'Duck'),
-    ('Daisy'	 ,     'Duck'),
-    ('Pippo'	 ,     'Cane'),
+    ('Donald'    ,     'Duck'),
+    ('Daisy'     ,     'Duck'),
+    ('Pippo'     ,     'Cane'),
     ('Silvestro' ,    'Gatto');
 
 

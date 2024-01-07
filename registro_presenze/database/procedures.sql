@@ -5,12 +5,12 @@ DELIMITER //
 CREATE PROCEDURE insert_corso(
     IN title_id INT,
     IN start_date DATE,
-	IN end_date DATE,
+    IN end_date DATE,
     IN am BOOL,
     IN pm BOOL
 )
 BEGIN
-	DECLARE curr_id INT;
+    DECLARE curr_id INT;
     DECLARE curr_date DATE;
     DECLARE total_hours INT;
     
@@ -24,18 +24,18 @@ BEGIN
     -- checks if current date is a working day
     WHILE curr_date <= end_date DO
 		IF NOT EXISTS (SELECT 1 FROM giorni_festivi WHERE data_festiva = curr_date) 
-        AND DAYOFWEEK(curr_date) NOT IN (1, 7) 
-            THEN
+	        AND DAYOFWEEK(curr_date) NOT IN (1, 7) 
+	            THEN
 				-- populates 'lezioni' by morning and/or afternoon time slot
 				IF am THEN
 					INSERT INTO lezioni (id_corso, giorno, ora_inizio, ora_fine)
-					VALUES (curr_id, curr_date, '09:00:00', '13:00:00');
+						VALUES (curr_id, curr_date, '09:00:00', '13:00:00');
 				END IF;
-                IF pm THEN
+	            IF pm THEN
 					INSERT INTO lezioni (id_corso, giorno, ora_inizio, ora_fine)
-					VALUES (curr_id, curr_date, '14:00:00', '18:00:00');
+						VALUES (curr_id, curr_date, '14:00:00', '18:00:00');
 				END IF;
-			END IF;
+		END IF;
 		-- increments date to continue the cycle
 		SET curr_date = DATE_ADD(curr_date, INTERVAL 1 DAY);
 	END WHILE;

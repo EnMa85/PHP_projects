@@ -1,4 +1,3 @@
-User
 <?php
 $pageTitle = "Registro";
 $pageContent = "register.php";

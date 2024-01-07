@@ -7,7 +7,7 @@ VALUES
     ('Sempronio' ,    'Rossi'),
     ('Pinco'     ,  'Pallino'),
     ('Pino'.     ,  'Calzino'),
-    ('Mickey'	 ,    'Mouse'),
+    ('Mickey'    ,    'Mouse'),
     ('Donald'	 ,     'Duck'),
     ('Daisy'	 ,     'Duck'),
     ('Pippo'	 ,     'Cane'),

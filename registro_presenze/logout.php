@@ -11,27 +11,26 @@ session_destroy();
 
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css">
-    <title>Logout</title>
-</head>
-<body>
-    <header class="login">
-
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/style.css">
+        <title>Logout</title>
+    </head>
+    <body>
+        <header class="login">
     
+        </header>
+        
+        <main>
+                <img id="logout" src="static/logout.png" alt="Logout image">
     
-    <main>
-            <img id="logout" src="static/logout.png" alt="Logout image">
-
-            <p class="login"><?php echo htmlspecialchars($message); ?></p>
-
-            <a class="button" href="login.php">Torna al login</a>
-    </main>
-
-    <?php include "_footer.php"; ?>
-
-</body>
+                <p class="login"><?php echo htmlspecialchars($message); ?></p>
+    
+                <a class="button" href="index.php">Torna al login</a>
+        </main>
+    
+        <?php include "_footer.php"; ?>
+    
+    </body>
 </html>

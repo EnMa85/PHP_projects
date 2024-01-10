@@ -40,7 +40,7 @@ function clock_script() {
             document.getElementById('now').innerText = 'Sono le ' + formattedTime + ' del ' + formattedDate;
         }
         // updates clock every second
-        setInterval(now, 1000);
+        setInterval(clock, 1000);
         </script>
     ";
 }
@@ -262,7 +262,7 @@ function send_email($subject, $message, $sender_mail, $sender_name){
     $mail = new PHPMailer();
 
     $send_to = ""; //admin mail
-    $pw = ""; // password admin mail 
+    $pw = ""; //password admin mail
     $host = ""; //host admin mail
     
     //$mail->SMTPDebug = 2;

@@ -15,7 +15,7 @@ if (isset($_POST["send_register"])) {
    try {
       $conn->begin_transaction();
 
-      // inserts the first status of the lesson
+      // inserts the first lesson state
       $stmt_ins_stat = $conn->prepare("INSERT INTO stato_presenze (id_lezione, id_corsista, stato, orario_variazione) VALUES (?, ?, ?, ?)");
       // updates the presences alredy sents
       $stmt_up_stat = $conn->prepare("UPDATE stato_presenze SET stato = ?, orario_variazione = ? WHERE id_corsista = ? AND id_lezione = ?");

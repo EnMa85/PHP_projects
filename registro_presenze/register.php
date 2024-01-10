@@ -1,4 +1,5 @@
 <?php
+
 $pageTitle = "Registro";
 $pageContent = "register.php";
 include "_base.php";

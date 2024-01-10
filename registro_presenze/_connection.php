@@ -1,4 +1,5 @@
 <?php
+
 include "_functions.php";
 
 function connect(){

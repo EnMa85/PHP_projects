@@ -1,4 +1,5 @@
 <?php
+
 $pageTitle = "Invia_registro";
 $pageContent = "register_sent.php";
 include "_base.php";

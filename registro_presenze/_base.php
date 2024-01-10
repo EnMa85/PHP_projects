@@ -1,6 +1,6 @@
 <?php
-include_once "connection.php";
-include_once "functions.php";
+include_once "_connection.php";
+include_once "_functions.php";
 
 // sets cookies expiration
 session_set_cookie_params ([
@@ -24,7 +24,7 @@ if (!isset($_SESSION['last_activity'])) {
 
 // if inactive session, redirects to the login page
 if (!isset($_SESSION['id_teacher'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
    

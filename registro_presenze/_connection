@@ -1,10 +1,11 @@
 <?php
+
 include "_functions.php";
 
 function connect(){
     $hostName = "localhost";
     $userName = "root";
-    $password = ""; // workbench mysql password
+    $password = "pyThon23@_";
     $databaseName = "registro";
     $conn = new mysqli($hostName, $userName, $password, $databaseName);
     if ($conn->connect_error) {
@@ -25,7 +26,7 @@ function count_attempt(){
 }
 
 
-// checks the entered credentials and the state of the account
+// checks the entered credentials and the account state
 function check_login($user, $pw, &$teacher_data) {
     try {
         $conn = connect();
@@ -47,6 +48,7 @@ function check_login($user, $pw, &$teacher_data) {
             $active_account = $row['account_attivo'] == 1;
             $db_pw = $row['password'];
 
+            // case of validated user
             if ($active_account && password_verify($pw, $db_pw)){
                 $teacher = $row['nome']." ".$row['cognome'];
                 $id_teacher = $row['id_docente'];
@@ -56,30 +58,31 @@ function check_login($user, $pw, &$teacher_data) {
                 $conn->close();
                 return true;
 
+            // case of account already blocked
             } else if (!$active_account) {
                 unset($_SESSION['login_attempts']);
                 throw new Exception("L'account è bloccato. Contatta l'assistenza.");
 
+            // case of account just blocked
             } else if ($_SESSION['login_attempts'] >= 3) {
                 unset($_SESSION['login_attempts']);
                 block_account($user);
                 throw new Exception("Hai effettuato troppi tentativi e l'account è stato bloccato.");
 
+            // case of invalid password
             } else {
                 throw new Exception("Accesso non riuscito.");
             }
+        // case of invalid email
         } else {
             throw new Exception("Accesso non riuscito.");
         }  
     } catch (Exception $e) {
-
         // saves log error
         $error_message = $e->getMessage();
         log_error($error_message);
-
         $stmt->close();
         $conn->close();
-        
         return $error_message;
     }
 }

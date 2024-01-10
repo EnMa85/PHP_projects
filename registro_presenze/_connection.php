@@ -1,10 +1,10 @@
 <?php
-include "functions.php";
+include "_functions.php";
 
 function connect(){
     $hostName = "localhost";
     $userName = "root";
-    $password = "";
+    $password = "pyThon23@_";
     $databaseName = "registro";
     $conn = new mysqli($hostName, $userName, $password, $databaseName);
     if ($conn->connect_error) {
@@ -25,7 +25,7 @@ function count_attempt(){
 }
 
 
-// checks the entered credentials and the status of the account
+// checks the entered credentials and the state of the account
 function check_login($user, $pw, &$teacher_data) {
     try {
         $conn = connect();
@@ -237,7 +237,7 @@ function student_list($course_id){
  }
 
 
-// reads status of presence/absence saved in a specific lesson
+// reads presence/absence states saved in a specific lesson
 function lesson_status($active_lesson){
     $conn = connect();
     $stmt = $conn->prepare("SELECT * FROM stato_presenze WHERE id_lezione = ?");

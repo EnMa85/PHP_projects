@@ -1,4 +1,5 @@
 <?php
+
 include_once "_connection.php";
 include_once "_functions.php";
 

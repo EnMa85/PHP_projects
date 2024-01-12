@@ -1,16 +1,17 @@
 <?php
-    include "_functions.php";
-    
-    function connect(){
-        $hostName = "localhost";
-        $userName = "root";
-        $password = "pyThon23@_";
-        $databaseName = "registro";
-        $conn = new mysqli($hostName, $userName, $password, $databaseName);
-        if ($conn->connect_error) {
-            die("Connection failed: ".$conn->connect_error);
-        }
-        return $conn;
+
+include "_functions.php";
+
+function connect(){
+    $hostName = "localhost";
+    $userName = "root";
+    $password = "pyThon23@_";
+    $databaseName = "registro";
+    $conn = new mysqli($hostName, $userName, $password, $databaseName);
+    if ($conn->connect_error) {
+        die("Connection failed: ".$conn->connect_error);
+    }
+    return $conn;
 }
 
 
@@ -264,4 +265,5 @@ function lesson_register($active_lesson){
     $conn->close();
     return $lesson_register;
 }
+
 ?>

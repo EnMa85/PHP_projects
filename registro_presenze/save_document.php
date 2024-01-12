@@ -2,10 +2,10 @@
     include_once "_connection.php";
     include_once "_functions.php";
     require 'vendor/autoload.php';
-    
+
     session_start();
-    
-    // if all post data are sets, uses functions to creates pdf or xlsx file with received array and title
+
+    // if all post data are sets, uses functions to creates pdf or xlsx file with the received array and title
     if (isset($_POST["pdf"]) && isset($_POST["title"]) && isset($_POST["array"])) {
         $title = $_POST["title"];
         $array = json_decode($_POST["array"], true);

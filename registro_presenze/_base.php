@@ -1,54 +1,52 @@
 <?php
+    include_once "_connection.php";
+    include_once "_functions.php";
 
-include_once "_connection.php";
-include_once "_functions.php";
+    // sets cookies expiration
+    session_set_cookie_params ([
+        'lifetime' => 3600,
+        'path' => '/',
+        'domain' => '.localhost',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
 
-// sets cookies expiration
-session_set_cookie_params ([
-    'lifetime' => 3600,
-    'path' => '/',
-    'domain' => '.localhost',
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Lax'
-]);
+    // starts the session if it's not already started
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
-// starts the session if it's not already started
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+    // creates inactivity time counter, if not exists
+    if (!isset($_SESSION['last_activity'])) {
+        $_SESSION['last_activity'] = time();
+    }
 
-// creates inactivity time counter, if not exists
-if (!isset($_SESSION['last_activity'])) {
+    // in case of inactive session, redirects to the login page
+    if (!isset($_SESSION['id_teacher'])) {
+        header("Location: index.php");
+        exit();
+    }
+    
+    // disconnects due to inactivity
+    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+        $message = urlencode("Sessione terminata per inattività.");
+        header("Location: logout.php?message=$message");
+        exit();
+    }
+
+    // sets to the current time the last activity session var
     $_SESSION['last_activity'] = time();
-}
 
-// if inactive session, redirects to the login page
-if (!isset($_SESSION['id_teacher'])) {
-    header("Location: index.php");
-    exit();
-}
-   
-// disconnects due to inactivity
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
-    $message = urlencode("Sessione terminata per inattività.");
-    header("Location: logout.php?message=$message");
-    exit();
-}
+    $last_activity = $_SESSION['last_activity'];
+    $teacher = $_SESSION['teacher'];
+    $id_teacher = $_SESSION['id_teacher'];
 
-// sets to the current time the last activity session var
-$_SESSION['last_activity'] = time();
+    // if there's a teacher logged, loads basic page
+    if ($id_teacher){
 
-$last_activity = $_SESSION['last_activity'];
-$teacher = $_SESSION['teacher'];
-$id_teacher = $_SESSION['id_teacher'];
-
-
-// if there's a teacher logged, loads basic page
-if ($id_teacher){
-
-    // loads clock
-    clock_script();
+        // loads clock
+        clock_script();
 ?>
 
     <!DOCTYPE html>

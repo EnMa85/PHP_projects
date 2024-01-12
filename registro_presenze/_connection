@@ -1,17 +1,16 @@
 <?php
-
-include "_functions.php";
-
-function connect(){
-    $hostName = "localhost";
-    $userName = "root";
-    $password = "pyThon23@_";
-    $databaseName = "registro";
-    $conn = new mysqli($hostName, $userName, $password, $databaseName);
-    if ($conn->connect_error) {
-        die("Connection failed: ".$conn->connect_error);
-    }
-    return $conn;
+    include "_functions.php";
+    
+    function connect(){
+        $hostName = "localhost";
+        $userName = "root";
+        $password = "pyThon23@_";
+        $databaseName = "registro";
+        $conn = new mysqli($hostName, $userName, $password, $databaseName);
+        if ($conn->connect_error) {
+            die("Connection failed: ".$conn->connect_error);
+        }
+        return $conn;
 }
 
 
@@ -63,9 +62,10 @@ function check_login($user, $pw, &$teacher_data) {
                 unset($_SESSION['login_attempts']);
                 throw new Exception("L'account è bloccato. Contatta l'assistenza.");
 
-            // case of account just blocked
+            // case of account to be blocked
             } else if ($_SESSION['login_attempts'] >= 3) {
                 unset($_SESSION['login_attempts']);
+                // updates account state
                 block_account($user);
                 throw new Exception("Hai effettuato troppi tentativi e l'account è stato bloccato.");
 

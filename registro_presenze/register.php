@@ -41,11 +41,10 @@ if ($next_lesson &&
         'lesson_end' => $next_lesson[0]['ora_fine'],
         'last_update' => $last_register_update
     ];
-    
     $students_data = [];
-    
+
     foreach($student_list as $current => $student){    
-    
+
         // presence not yet sent or the student is present
         $checked = ($first_sending || $lesson_status[$current]['stato'] == 'presente');
 
@@ -71,7 +70,7 @@ if ($next_lesson &&
                 $note = $value['note'];
             }
         }
-        
+
     // aggregates single student data
         $student_data = [
             'id' => $student['id'],
@@ -84,11 +83,11 @@ if ($next_lesson &&
             'time' => $last_student_update,
             'note' => $note
         ];
-
         // appends single student data as row in a multidimensional array
         $students_data[] = $student_data;
     }
 }
+
 ?>
 
 

@@ -5,7 +5,7 @@ include "_functions.php";
 function connect(){
     $hostName = "localhost";
     $userName = "root";
-    $password = "pyThon23@_";
+    $password = "";
     $databaseName = "registro";
     $conn = new mysqli($hostName, $userName, $password, $databaseName);
     if ($conn->connect_error) {
